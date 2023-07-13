@@ -2,3 +2,8 @@
 10.128.0.29
 [prod]
 10.128.0.30
+
+[dev:vars]
+ansible_password=abhin
+[prod:vars]
+ansible_password=abhin
