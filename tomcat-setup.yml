@@ -1,9 +1,9 @@
 ---
 - name: Tomcat deployment playbook
-  hosts: websrvgrp       # Inventory hosts group / server to act on
+  hosts: all       # Inventory hosts group / server to act on
   become: yes               # If to escalate privilege
   become_method: sudo       # Set become method
-  remote_user: root         # Update username for remote server
+  remote_user: achuabhin86         # Update username for remote server
   vars:
     tomcat_ver: 9.0.64                          # Tomcat version to install
     tomcat_v_num: 9
@@ -13,4 +13,5 @@
     ui_admin_pass: Str0ngAdminP@ssw3rd       # UI admin password
   roles:
     - tomcat
-
+    - ansible-role-php
+    - geerlingguy.apache 

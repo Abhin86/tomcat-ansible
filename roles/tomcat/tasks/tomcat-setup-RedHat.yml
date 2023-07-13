@@ -5,7 +5,7 @@
 
 - name: Install basic packages
   package:
-    name: ['firewalld','vim','bash-completion','tmux','tree','htop','wget','unzip','curl','git']
+    name: ['vim','bash-completion','tmux','tree','htop','wget','unzip','curl','git']
     state: present
 
 - name: Install Java 8 CentOS
@@ -59,21 +59,6 @@
     name: tomcat
     state: started
     enabled: yes
-  when: ansible_service_mgr == "systemd"
-
-- name: Start and enable firewalld
-  service:
-    name: firewalld
-    state: started
-    enabled: yes
-  when: ansible_service_mgr == "systemd"
-
-- name: Open tomcat port on the firewall
-  firewalld:
-    port: 8080/tcp
-    permanent: true
-    state: enabled
-    immediate: yes
   when: ansible_service_mgr == "systemd"
 
 - name: Set UI access credentials
