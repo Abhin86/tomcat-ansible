@@ -19,3 +19,4 @@
     - geerlingguy.apache-php-fpm
     - geerlingguy.apache 
     - ansible-role-php
+    - ansible-role-postgresql
